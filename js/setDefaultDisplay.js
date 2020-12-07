@@ -1,32 +1,49 @@
-const HEADER_CONTAINER = "header-container";
-const HEADER_CONTENT = "header-content";
+class Display {
+    constructor() {
+        this.width = window.innerWidth || Document.body.clientWidth;
+        this.height = window.innerHeight || Document.body.clientHeight;
+    }
 
-const WIDTH = "width";
-const HEIGHT = "height";
+    get size() {
+        return {
+            width: this.width,
+            height: this.height
+        };
+    }
 
-const getDisplaySize = () => {
-    const size = {
-        width : window.innerWidth || document.body.clientWidth,
-        height : window.innerHeight || document.body.clientHeight
-    };
-    
-    return size;
+    static draw(targetname, value) {
+        const { width, height } = value;
+
+        const target = document.getElementById(targetname);
+
+
+        target.style.width = String(width) + "px";
+        target.style.height = String(height) + "px";
+    }
+
+    static compareDisplaySize(compare, current) {
+        if (compare.width !== current.width || compare.height !== current.height) {
+            return true;
+        }
+    }
 }
 
-
-const setDisplaySize = (obj, value) => {
-    const { width, height } = value;
-    
-    const target = document.getElementById(obj);
-
-
-    target.style.width = String(width) + "px";
-    target.style.height = String(height) + "px";
-}
 
 
 const onLoadHandler = () => {
-    const size = getDisplaySize();
-    
-    setDisplaySize(HEADER_CONTAINER, size);
+    const display = new Display();
+    const size = display.size;
+
+    // console.log(size.width, size.height);
+
+    Display.draw(HEADER_CONTAINER, size);
+
+    // observe chagne display size
+    setInterval(() => {
+        const currentDisplay = new Display();
+
+        if (Display.compareDisplaySize(display, currentDisplay)) {
+            location.reload();
+        }
+    }, 100);
 }
