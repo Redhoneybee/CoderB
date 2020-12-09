@@ -1,3 +1,6 @@
+#container{
+  overflow-x : none;
+}
 #header-container {
   background-color: #293241;
   position: relative;
@@ -5,39 +8,53 @@
   left: 0;
 }
 
-#header-container #header-content {
-  position: absolute;
-  top: 50%;
-  width: inherit;
-  text-align: center;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
+.coderb-light{
+  color : #ffcb00;
 }
 
-#header-content .header-title {
-  line-height: 54px;
-  font-size: 48px;
-}
-.header-title bee {
-  color: #ffb600;
-  font-size: 54px;
-}
-.middle-box {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
+.section:nth-of-type(1){
+  color : #fff;
+  height : calc(100vh + 53px);
 }
 
-.middle-box h3 {
-  padding: 10px 15px;
-  border: 3px solid white;
-  cursor: pointer;
+.section:nth-of-type(1) .text{
+  font-size : 24px;
+  line-height : 28px;
+  font-weight : bold;
+  pointer-events : none;
+  z-index : 1;
 }
 
-@media screen and (max-width: 414px) {
-  #header-content .header-title {
-    line-height: 42px;
-    font-size: 38px;
+.section:nth-of-type(1) .button{
+  position : relative;
+  margin : 20px;
+  padding : 10px 20px;
+  border : 2px solid #fff;
+  transition : all 0.5s;
+  cursor : pointer;
+}
+
+.section:nth-of-type(1) .button:hover{
+  border : 2px solid #ff6150;
+  background-color : #ff6150;
+  font-weight : bold;
+}
+
+.flex{
+  display : flex;
+  align-items : center;
+  flex-direction : column;
+  justify-content : center;
+}
+
+
+
+@media screen and (min-width : 600px){
+  .section:nth-of-type(1) .text{
+    font-size : 38px;
+    line-height : 42px;
+  }
+  .section:nth-of-type(1) .button{
+    padding : 15px 35px;
   }
 }

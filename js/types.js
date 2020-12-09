@@ -1,1 +1,0 @@
-const HEADER_CONTAINER = "header-container";
