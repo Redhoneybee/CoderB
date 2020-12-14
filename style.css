@@ -56,7 +56,47 @@ section:nth-of-type(1) .button:hover{
   flex-direction : column;
   justify-content : center;
 }
+nav{
+  background-color : #293241;
+  border-bottom : 3px solid#ff6150;
+  width : 100%;
+  height : 50px;
+}
+nav.fixed{
+  position : fixed;
+  left : 0;
+  top : 0;
+  z-index : 999;
+}
 
+nav .nav-content{
+  position : absolute;
+  background-color : #30475e;
+  top : 53px;
+  width : 100%;
+  overflow : hidden;
+}
+
+nav .nav-content div{
+  border-bottom : 2px solid #ff6150;
+  padding : 15px 20px;
+  text-transform : uppercase;
+}
+
+nav .nav-content div.active{
+  font-weight : bold;
+  color : #ff6150;
+}
+
+.fa-align-justify{
+  position : absolute;
+  margin : auto 0;
+  top : 0;
+  right : 20px;
+  font-size : 42px;
+  height : 42px;
+  line-height : 42px;
+}
 .slider{
   display : flex;
   width : calc(100% - 15px);
