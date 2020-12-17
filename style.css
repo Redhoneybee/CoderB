@@ -26,7 +26,12 @@ section:nth-of-type(1){
   color : #fff;
   height : calc(100vh + 53px);
 }
-
+section:nth-of-type(1) canvas{
+  position : absolute;
+  height : 100%;
+  width : 100%;
+  z-index : -50;
+}
 section:nth-of-type(1) .text{
   font-size : 24px;
   line-height : 28px;
@@ -57,16 +62,22 @@ section:nth-of-type(1) .button:hover{
   justify-content : center;
 }
 nav{
+  position : absolute;
   background-color : #293241;
   border-bottom : 3px solid#ff6150;
   width : 100%;
   height : 50px;
+  bottom : 0;
+  transition: height .5s;
 }
 nav.fixed{
   position : fixed;
   left : 0;
   top : 0;
   z-index : 999;
+}
+nav.pc.fixed{
+  animation : tabDown .5s ease-out;
 }
 
 nav .nav-content{
@@ -75,17 +86,26 @@ nav .nav-content{
   top : 53px;
   width : 100%;
   overflow : hidden;
+  height : 0;
+  transition : height .3s ease-out;
+}
+
+nav .visible{
+  height : calc(200% - 12px);
 }
 
 nav .nav-content div{
   border-bottom : 2px solid #ff6150;
   padding : 15px 20px;
   text-transform : uppercase;
+  cursor : pointer;
 }
+
 
 nav .nav-content div.active{
   font-weight : bold;
   color : #ff6150;
+  cursor : pointer;
 }
 
 .fa-align-justify{
@@ -140,6 +160,9 @@ section:nth-of-type(2) .item-wrap{
   width :120px;
   height : 250px;
 }
+section:nth-of-type(2) .itemDown{
+  animation : itemDown .5s ease-in;
+}
 .active-circle i{
   position : absolute;
   color : #ffffff;
@@ -177,11 +200,21 @@ section:nth-of-type(2) .circle-info{
   section:nth-of-type(2) .main-text{
     font-size : 20px;
     line-height : 24px;
+    padding : 20px;
   }
   section:nth-of-type(2) .text{
     font-size : 16px;
     line-height : 20px;
+    color : gray;
   }
+
+}
+
+section:nth-of-type(2) #growth.slideRight{
+  animation : slideLeft .7s ease-out;
+}
+section:nth-of-type(2) #technic.slideLeft{
+  animation : slideRight .7s ease-out;
 }
 
 @media screen and (min-width : 600px){
@@ -199,5 +232,22 @@ section:nth-of-type(2) .circle-info{
 
   section:nth-of-type(2) img{
     height : 350px;
+  }
+  nav .nav-content{
+    position : initial;
+    background : none;
+    height : initial;
+    overflow : visible;
+    text-align : left;
+  }
+  nav .nav-content div{
+    display : inline;
+    margin : 0 20px;
+    font-size : inherit;
+    padding : initial;
+    border-bottom : none;
+  }
+  nav .fa-align-justify{
+    display : none;
   }
 }

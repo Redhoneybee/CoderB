@@ -3,6 +3,50 @@
 
 <head>
     <meta charset="UTF-8">
+    <style>
+        @keyframes tabDown {
+
+            0% {
+                transform: translateY(-120px);
+            }
+        }
+
+        @keyframes itemDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes slideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-150px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+
+        @keyframes slideRight {
+            from {
+                opacity: 0;
+                transform: translateX(150px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+    </style>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +57,7 @@
 <body>
     <div id="container">
         <section id="header-container" class="flex">
+            <canvas></canvas>
             <div class="flex">
                 <div class="text">
                     It's C<span class="coderb-light">0</span>der<span class="coderb-light">B</span> page.
@@ -21,23 +66,23 @@
                     Know about me
                 </div>
             </div>
-            <nav class="flex fixed">
+            <nav class="flex">
                 <div class="nav-content">
-                    <div class="dest-link active">home</div>
-                    <div class="dest-link"></div>
+                    <div class="dest-link active" data-dest="header-container">home</div>
+                    <div class="dest-link" data-dest="main-1-container">about me</div>
                 </div>
                 <i class="fas fa-align-justify"></i>
             </nav>
         </section>
 
         <section id="main-1-container" class="slider">
-            <div class="slider-item">
+            <div id="profile" class="slider-item">
                 <div class="flex flex-row fix-margin">
-                    <div class="flex flex-50">
+                    <div id="logo" class="flex flex-50">
                         <img src="images/coderB_bg_350_350.png">
                     </div>
-                    <div class="flex flex-50">
-                        <div class="main-text">Hello, I'm C0derB</div>
+                    <div id="greeting" class="flex flex-50">
+                        <div class=" main-text">Hello, I'm C0derB</div>
                         <div class="text">
                             <p>I'm korean, i hope to become full-stack developer.</p>
                             <p>but, i'm far them yet, so, i enjoy the programming in everyday</p>
@@ -47,9 +92,9 @@
                 </div>
 
             </div>
-            <div class="slider-item">
+            <div id="graph" class="slider-item">
                 <div class="flex flex-row">
-                    <div class="item-wrap flex-50">
+                    <div id="growth" class="item-wrap flex-50">
                         <div class="active-circle">
                             <i class="fas fa-code-branch"></i>
                         </div>
@@ -57,7 +102,7 @@
                             <div class="main-text">Growth process</div>
                         </div>
                     </div>
-                    <div class="item-wrap flex-50">
+                    <div id="technic" class="item-wrap flex-50">
                         <div class="active-circle">
                             <i class="fas fa-chart-bar"></i>
                         </div>
