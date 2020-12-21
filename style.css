@@ -117,18 +117,19 @@ nav .nav-content div.active{
   height : 42px;
   line-height : 42px;
 }
-.slider{
-  display : flex;
-  width : calc(100% - 15px);
-  overflow-x : auto;
-  max-height : 600px;
+.slider-box{
+  width : 100%;
+  margin : auto;
+  overflow : hidden;
+  max-height : 520px;
 }
-
+.slider-list{
+  float : left;
+}
 .slider-item{
-  margin : 0 20px;
-  width : inherit;
-  flex-shrink : 0;
-  height : 100%;
+  display : table;
+  float : left;
+  height : 520px;
 }
 
 section:nth-of-type(2) img{
@@ -154,6 +155,7 @@ section:nth-of-type(2) .active-circle{
   height : 120px;
   border-radius : 50%;
   background-color : #ff6150;
+  cursor : pointer;
 }
 
 section:nth-of-type(2) .item-wrap{
@@ -215,6 +217,36 @@ section:nth-of-type(2) #growth.slideRight{
 }
 section:nth-of-type(2) #technic.slideLeft{
   animation : slideRight .7s ease-out;
+}
+
+
+section:nth-of-type(2) .slider-btn{
+  width : 40px;
+  height : 60px;
+  background : rgba(178, 172, 171, 0.5);
+  text-align : center;
+  cursor : pointer;
+}
+section:nth-of-type(2) .slider-btn.slider-btn-left{
+  position : fixed;
+  left : 0;
+  border-top-right-radius : 20px;
+  border-bottom-right-radius : 20px;
+  top : 50%; 
+}
+
+section:nth-of-type(2) .slider-btn.slider-btn-right{
+  position : fixed;
+  right : 0;
+  border-top-left-radius : 20px;
+  border-bottom-left-radius : 20px; 
+  top : 50%;
+}
+
+section:nth-of-type(2) .slider-btn i{
+  font-size : 38px;
+  line-height : 60px;
+  color : rgb(147, 143, 142);
 }
 
 @media screen and (min-width : 600px){
