@@ -51,13 +51,26 @@
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/977ba55229.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <title>C0derB Info</title>
 </head>
 
 <body>
+    <div class="modal-wrap flex">
+        <div class="mask"></div>
+        <div class="modal modal-growth">
+            <div class="flex modal-content">
+                <canvas id="chart">
+
+                </canvas>
+                <div class="flex modal-foot btn modal-close">
+                    CLOSE
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="container">
         <section id="header-container" class="flex">
-            <canvas></canvas>
             <div class="flex">
                 <div class="text">
                     It's C<span class="coderb-light">0</span>der<span class="coderb-light">B</span> page.
@@ -97,7 +110,7 @@
                     <div id="graph" class="slider-item">
                         <div class="flex flex-row">
                             <div id="growth" class="item-wrap flex-50">
-                                <div class="active-circle">
+                                <div class="active-circle btn">
                                     <i class="fas fa-code-branch"></i>
                                 </div>
                                 <div class="circle-info">
@@ -105,7 +118,7 @@
                                 </div>
                             </div>
                             <div id="technic" class="item-wrap flex-50">
-                                <div class="active-circle">
+                                <div class="active-circle btn">
                                     <i class="fas fa-chart-bar"></i>
                                 </div>
                                 <div class="circle-info">
@@ -126,5 +139,6 @@
     </div>
 </body>
 <script type="text/javascript" src="./js/index.js"></script>
+<script type="text/javascript" src="./js/modal.js"></script>
 
 </html>
